@@ -1,0 +1,382 @@
+<html>
+
+<head>
+ <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Flip2Rent</title>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    background: #f7efef;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li a{
+    text-decoration:none;
+    color: #3f51b5;
+}
+.text-box{
+    margin-top: 130px;
+    max-width: 600px;
+}
+.text-box h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #3f51b5;
+}
+.text-box a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #3f51b5;
+    padding: 10px 30px;
+    font-size: 18px;
+    margin-top: 50px;
+    border-radius: 6px;
+}
+.user-box{
+    background: #d9e0ff;
+    position: absolute;
+    top: 0;
+    right: 12%;
+    margin-top: 190px
+}
+.user-box img{
+    display: block;
+    padding-top: 1px;
+    width: 410px;
+    margin-bottom: -205px;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #5c539d;
+}
+.container h2{
+    color: #fff;
+    font-size: 35px;
+    padding; 50px 0;
+    text-align: center;
+}
+.Price-row{
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    grid-gap: 25px;
+}
+.Price-col{
+    background: #1f283b;
+    padding: 10% 15%;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    
+}
+.Price-col p{
+    font-size: 22px;
+}
+.Price-col h3{
+    font-size: 44px;
+    margin: 20px 0 40px;
+    font width: 500;
+}
+.Price-col h3 span{
+    font-size: 16px;
+}
+.Price-col ul{
+    text-align: left;
+    margin: 20px 0;
+    color: #ddd;
+    list-style: none;
+
+}
+.Price-col ul li{
+    margin: 15px 0;
+    
+}
+.Price-col ul li::before{
+    content: '\2022';
+    color: #e33058;
+    font width: bold;
+    margin right: 19;
+}
+.Price-col button{
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #e33058;
+    border border-radius: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: backgroung 0.5s;
+}
+.Price-col button:hover{
+    background: #e33058
+    
+}
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+.footer{
+    margin-top: 0px;
+    width: 100%;
+    padding: 100px 15%;
+    background: #333;
+    color: #efefef;
+    display: flex;
+}
+.footer div{
+    text-align: center;
+}
+.col-2{
+    flex-grow: 2;
+}
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+.col-1 a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+form input{
+    width: 400px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+form button{
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons i{
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+.col-2{
+    margin: 0% 15%;
+}
+/* .col-3{
+    margin-left: 15%;
+} */
+</style>
+    <body>
+    <div class="header">
+        <nav>
+        <img src="final%20logo.jpeg" width="130" height="100">
+            <ul>
+            <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Howitworks</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+            <div class="text-box">
+                <h1>Great Discounts On latest Products</h1>
+                <p> Flip Your Life To Rental E Com</p>
+                 <a href="#">Shop Now</a>
+                </div>
+        <div class="user-box">
+        <img src="/background img 3.jpg" width="50%" height="50%">
+            </div>
+        </div>
+         <div class="container">
+        &#160 
+        
+        <h2>How Flip2Rent Works
+     </h2>
+        &#160
+        <div class="Price-row">
+            <div class="Price-col">
+                <p>For Students</p>
+                <h3>Starting @</h3>
+                <h3> 149 Rs <span>/ Month</span></h3>
+                <ul>
+                    <li>&#160 &#160 &#160 Verify Student Identitiy</li>
+                    <li>&#160 &#160 &#160 Verify Financical Report</li>
+                    <li>&#160 &#160 &#160 Verify KYC</li>
+                    <li>&#160 &#160 &#160 Start Using TakeForRent</li>
+                    <li>&#160 &#160 &#160 Start Using Flip2Rent</li>
+                    <li>&#160 &#160 &#160 Lowest Prices</li>
+                </ul>
+                 <a href="https://www.TakeForRent.Com/">
+    <button>Shop Now</button>
+  </a> 
+         </div>
+               <div class="Price-col">
+                <p>For Salaried</p>
+                     <h3>Starting @</h3>
+                <h3>349 Rs <span>/ Month</span></h3>
+                <ul>
+                    <li>&#160 &#160 &#160 Verify Your Employment</li>
+                    <li>&#160 &#160 &#160 Verify Your Financiels</li>
+                    <li>&#160 &#160 &#160 Verify KYC </li>
+                    <li>&#160 &#160 &#160 Start Using TakeForRent</li>
+                    <li>&#160 &#160 &#160 Start Using Flip2Rent</li>
+                    <li>&#160 &#160 &#160 Exclusive Offers</li>
+                </ul>
+                <a href="https://www.TakeForRent.Com/">
+    <button>Shop Now</button>
+  </a> 
+
+         </div>
+               <div class="Price-col">
+                <p>For Self Employed</p>
+                     <h3>Starting @</h3>
+                <h3>449 Rs <span>/ Month</span></h3>
+                <ul>
+                   <li>&#160 &#160 &#160 Verify Your Profission </li>
+                   <li>&#160 &#160 &#160 Verify Your Financiels </li>
+                   <li>&#160 &#160 &#160 Verify KYC </li>
+                   <li>&#160 &#160 &#160 Start Using TakeForRent</li>
+                   <li>&#160 &#160 &#160 Earn 7% Flat Cashback </li>
+                   <li> &#160 &#160 &#160 On Every Order</li>
+                </ul>
+               <a href="https://www.TakeForRent.Com/">
+    <button>Shop Now</button>
+  </a> 
+
+         </div>
+            
+        </div>
+        </div>
+    <div class="footer">
+        <div class="col-1">
+        <h3> USEFUL LINKS</h3>
+        <a href="#">about</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Shop</a>    
+        <a href="#">Blog</a>
+        </div>
+        
+        <div class="col-2">
+        <h3>NEWSLETTER</h3>
+        <form> <input type="email" placeholder="Your Emaid Address" required> 
+            <br>
+            <button type="submit">SUBSCRIBE NOW</button>
+            </form>        
+        </div>
+        <div class="col-3">
+        <h3>CONTACT</h3>
+            <p>#9-29-7/3, Balaji Nagar,Siripuram Junction,<br>
+                Visakhapatanam  Andhra Pradesh 530003</p>
+            <div class="social-icons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-linkedin"></i>
+         </div>
+        </div>
+        </div>
+    </body>
+</html>
