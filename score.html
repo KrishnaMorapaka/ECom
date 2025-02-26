@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <title>Flip2Rent | Rent Score</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Stick No Bills', sans-serif;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        background: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        position: relative;
+        width: 500px;
+        padding: 50px;
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+    }
+    .progress-circular{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: conic-gradient(rgb(4, 254, 117) 0deg, #ededed 0deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+    }
+    .progress-circular::after{
+        position: absolute;
+        content: '';
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    .value{
+        font-size: 60px;
+        font-weight: 300;
+        color: black;
+        z-index: 9;
+    }
+    .text{
+        font-size: 30px;
+        font-weight: 300;
+        color: black;
+        margin: 20px 0;
+    }
+    .btn{
+        display: flex;
+        flex-direction: column;
+        width:60%;
+    }
+    input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(4, 254, 117);
+        border-radius: 10px 10px 0 0;
+        outline: none;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 300;
+        color: black;
+    }
+    button{
+        border-radius: 0 0 10px 10px ;
+        outline: none;
+        background: aqua;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+    }
+    button:active{
+        color: black;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Flip2Rent Unique <b>Rent Score &#153;</b></h1><br>
+        <div class="progress-circular">
+            <span class="value">0</span>
+        </div>
+        <div class="text">Your Rent Score</div>
+        <div class="btn">
+            <input type="text" >
+            <button>Enter</button>
+        </div>
+    </div>
+    <!-- <script>
+        let progressCircular = document.querySelector(".progress-circular"); 
+let btn = document.querySelector("button");
+let inp = document.querySelector("input");
+let value = document.querySelector(".value");
+let start = 0;
+
+btn.addEventListener("click", bar);
+
+function bar() {
+let progress = setInterval(() => {
+start++;
+value.textContent = `${start}`;
+progressCircular.style.background = `conic-gradient(rgb(4, 254, 117) ${start * 3.6}deg, #ededed ${360 - start}deg)`;
+if (start == inp.value){
+clearInterval (progress);
+inp.value = "";
+}
+});
+
+}
+    </script> -->
+<script>
+    let progressCircular = document.querySelector(".progress-circular");
+let btn = document.querySelector("button");
+let inp = document.querySelector("input");
+let value = document.querySelector(".value");
+let start = 0;
+
+btn.addEventListener("click", bar);
+
+function bar() {
+  let progress = setInterval(() => {
+    start++;
+    value.textContent = `${start}`;
+    progressCircular.style.background = `conic-gradient(rgb(4, 254, 117) ${
+      start * 3.6
+    }deg, #ededed ${360 - start}deg)`;
+
+    if (start == inp.value || start == 100) {
+      clearInterval(progress);
+      inp.value = "";
+      start = 0;
+    }
+  });
+}
+</script>
+</body>
+</html>
